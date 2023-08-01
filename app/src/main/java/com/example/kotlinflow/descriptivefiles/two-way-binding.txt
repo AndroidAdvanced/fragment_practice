@@ -1,0 +1,13 @@
+We can set can viewmodel methods in binding
+We can observer any variable and set its value to specific field into binding
+
+For that we need to assign viewmodel object to binding viewmodel
+And assign this to lifececycleowner of binding
+
+--------------------------------------------------------------------------------------
+ Two way binding
+
+If any changes made to variable its value reflect on view
+If any changes made to view , its value will reflect on variable
+---------------------------------------
+

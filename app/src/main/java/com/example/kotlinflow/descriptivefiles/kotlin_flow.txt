@@ -1,0 +1,114 @@
+18-07
+
+Topic : Kotlin Flow
+
+what is kotlin flow?
+What is need of it?
+
+Why coroutine?
+It help to implement asynchronous, non blocking code - for this we use suspend function.
+ for network call, database operation, task that  return single value
+we want to execute code asynchronously.
+so that thread doesn't block.
+
+Suspend function returns single value that's why it waits long time compated to flow
+We make suspend function for that and launch it through coroutine.
+Suspend function return single object
+
+So lets say we call suspended function getUser from main thread,
+untill all user user value comes, main thread will be in suspend mode
+
+So scenarios where we get multiple data, we can use strems.
+
+Launch : We dont expect result to come, for that we use launch
+
+suspend fun deleteUser() {
+     CoroutineScope(Dispatchers.IO).launch {
+            // network call
+     }	
+}
+
+Await :
+
+ suspend fun createUser() {
+      val user = CoroutineScope(Dispatchers.IO).async {
+       // network call
+       }	
+       return user.await()
+}
+example: insert some data
+                     download image
+
+In flow, consumers are independant
+It will receive data from start even if it joins later
+
+For every consumer, indepenant flow object is created
+
+We can have multiple consumer
+We can cancel producer
+onStart  - in case of api call, we can show loader
+onCompletion  - in case of api call, we can hide loader
+onEach
+collect
+
+We have two types of operator
+1. Terminal Operator  2. Non terminal operator
+
+Terminal operator starts the flow, and those are suspended 
+----------------------
+collect
+first
+toList
+
+Non Terminal Operator
+----------------------------
+Map : map covert data from one form to another form
+filter: 
+
+
+asFlow() : list can be converted to flow 
+
+
+Task : print notes which is active and also convert title into upper case
+
+Let say producer is fast, and consumer is slow , we can use buffer so that our code executes fast
+
+withContext
+---------------
+
+Bydefault flow executes on main thread
+Lets say we have network call, so we shount execute network call on main thread. 
+in this case we will have network call at producer end on IO thread using withContext
+and we can collect items on main thread
+
+If we have differnt context for producer and consumer,  
+to switch context we need to use  flowOn operator
+
+flowOn above statement execute on context defined in flowOn
+flowOn below statement execute on context defined at launch of coroutine
+We can have multiple flowOn operator
+
+Exception Handling
+
+catch method
+If we want to segregate exception of producer and consumer,  
+we can use catch method at producer end and try/catch at receiver end
+
+SharedFlow
+---------------
+If we have two consumer,  second consumer join later on, still it will get data from start
+But we dont want second consumer who joins later get data from start, but should 
+get fresh data, we can use sharedflow.
+
+Two ways to implement sharedflow
+1. mutableshared flow : we can change
+2. shared flow : is read only
+
+replay : if consumer joins later, it will get that number of data.
+
+state flow is also a variant of sharedflow
+state flow and sharedflow both are of hot nature
+
+it retain last value of flow
+
+shared flow doesnt maintain state

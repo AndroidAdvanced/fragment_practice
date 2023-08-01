@@ -1,0 +1,4 @@
+we can set custom property to view in XML
+e.g.  For ImageView we can make extension function to download image 
+and make that fucntion as bindingadapter , this way we can just write
+just property to imageview and image will be downloaded
