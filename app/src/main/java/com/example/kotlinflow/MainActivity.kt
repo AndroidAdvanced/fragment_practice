@@ -43,5 +43,6 @@ class MainActivity : AppCompatActivity() {
         ft = fm.beginTransaction()
         ft.add(R.id.frameLayout, fragment)
         ft.commitAllowingStateLoss()
+        // add
     }
 }
