@@ -1,0 +1,35 @@
+20-07
+
+Topic : Unit Testing
+
+What is Unit Testing?
+--------------------------
+
+It doesn't mean to test single class, or single function
+
+It refer to unit in your code
+
+unit could be function, class or module, or even multiple class working together
+as long as its related behaviour
+Goal is to isolate different parts of the software
+
+What is Mockito?
+----------------------
+
+
+our test case should fail for what we have written,
+it shouln't fail due to external reasons.
+
+Lets say if we want to test Class A, and it has dependency of Class B 
+in this case, we can mock object of class B. we can say create fake object
+
+We can have deterministic output : becuase we defined behaviour of 
+fake object, so our test cases would be realistic
+
+
+
+
+
+
+
+

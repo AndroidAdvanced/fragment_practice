@@ -1,0 +1,55 @@
+Thread is a light weight process
+Inside process there is multiple threads to achieve parallelism
+
+
+New    Runnable  Running Dead
+
+
+                         Waiting
+
+Thread t = new Thread();   Thread will be in new state
+
+
+t.start();   Thread enters into runnable state from new state.
+                         Thread put on thread scheduler, but cpu not allocate for this thread
+
+Now when thread  scheduler select the thread , it allocate CPU and execute that thread
+at that time it will enters into Running Thread
+----------------------------------------------------------------------------
+
+Now when we call wait, sleep and suspend method on currently executing thread,
+thread goes to waiting state, reason could be is other thread want perform
+its own task.
+
+Thread moves from waiting state to runnable, when other thread
+calls notify or notifyAll or resume metod
+
+
+dead state :   When thread finish its execution, it goes into finish state
+
+
+
+https://medium.com/@ahmadkazimi/6-design-patterns-every-android-developer-must-know-53d912b5864b
+
+Design Pattern
+-------------------
+Creational Pattern
+singleton
+builder
+factory
+
+
+Behavioural Pattern
+-------------------------
+
+
+Structural Pattern
+-----------------------
+Adapter 
+Decorator
+
+
+
+
+
+

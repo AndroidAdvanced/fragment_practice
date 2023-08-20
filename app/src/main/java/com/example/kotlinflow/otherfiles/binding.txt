@@ -1,0 +1,67 @@
+View Binding : 
+--------------------
+1.  Create Binding Object
+2.  Initialize Binding Object in onCreateView
+3.  set binding to null in onDestroyView
+It is done compile time
+
+Benefits : 
+-------------------
+no need to use findViewById
+Threre is no scope of null reference
+
+spinKitView for loader
+
+
+Data Binding
+-----------------
+Support Library to bind UI components to data source
+using declarative format.
+
+If data model value changes, it directly reflected on view
+
+Data binding done at compile time
+no need to use findviewbyid
+No memory leaks
+
+set data binding to true in gradle
+
+xml file starts with layout
+<data> </data>
+
+activity_main -> ActivityMainBinding
+
+we need to set binding property to model class
+
+create quote variable in xml
+
+Quote()
+
+binding.quote = Quote()
+
+
+
+Difference
+ViewBinding is subset of data binding,
+but view binding is heavy library and it causes heavy compile time.
+
+
+View Binding : Advantage is speed and effieciency,  Build time is faster, because 
+ Data Binding : build time is slower, because annotation processor affecting its build time
+
+View Binding : we can not bind layout with data, no binding adapters, no two way binding, no variable declaration in xml
+Data Binding : it supports above
+
+
+View Binding : 
+Data Binding : it works with observable, so automatic data refresh when model
+        value changes
+
+View Binding : its functionality is to bind view in code
+
+
+
+
+
+
+

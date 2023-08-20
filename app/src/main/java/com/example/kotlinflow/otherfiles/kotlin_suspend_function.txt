@@ -1,0 +1,33 @@
+18-07
+
+Topic : Kotlin Flow
+
+what is kotlin flow?
+What is need of it?
+
+Why coroutine?
+It help to implement asynchronous, non blocking code - for this we use suspend function.
+ for network call, database operation, task that  return single value
+we want to execute code asynchronously.
+so that thread doesnt block.
+We make suspend function for that and launch it through coroutine.
+Suspend function return single object
+
+Launch : We dont expect result to come, for that we use launch
+
+suspend fun deleteUser() {
+     CoroutineScope(Dispatchers.IO).launch {
+            // network call
+     }	
+}
+
+Await :
+
+ suspend fun createUser() {
+      val user = CoroutineScope(Dispatchers.IO).async {
+       // network call
+       }	
+       return user.await()
+}
+example: insert some data
+                     download image

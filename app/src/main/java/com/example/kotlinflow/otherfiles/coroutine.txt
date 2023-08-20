@@ -1,0 +1,23 @@
+WithContext & RunBlocking
+-----------------------------------
+
+Launch is non blocking
+WithContext is blocking nature, code runs sequentially
+We compulsory need to pass disptacher in withContext
+
+Coroutine doesn't block thread, it executes next line
+
+Runblocking : Untill coroutine executes, it blocks thread
+
+
+ViewModelScope
+----------------------
+Coroutine scope attached with your viewmodels
+All coroutine cancelled automatically when viewmodel is cleared,
+we don't need to manually cancel coroutine
+
+LifeCycleScope
+-------------------
+ Coroutine scope attached with lifecycle :  activity or fragments
+Coroutine cancelled when lifecycle (activity or fragment) cancels,
+we don't need to manually cancel the coroutine

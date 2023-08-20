@@ -1,0 +1,11 @@
+Unit test
+
+1. JVM test or Local Unit test
+2. Instrumentation Test 
+    It devide into UI(Interaction With  View) and NON Ui Test(Context, AssetManager)
+    Test cases that require instrument to test, called instrumentation test cases
+
+
+JUnit : JVM test
+Mockito : Mock or Fake  object
+Espresso : Ui Interaction

@@ -1,0 +1,439 @@
+200 questions per day
+---------------------------
+
+https://climbtheladder.com/android-architecture-components-interview-questions/
+https://www.fullstack.cafe/blog/kotlin-interview-questions
+https://climbtheladder.com/android-retrofit-interview-questions/
+https://climbtheladder.com/android-activity-lifecycle-interview-questions/
+https://climbtheladder.com/android-unit-testing-interview-questions/
+https://climbtheladder.com/android-security-interview-questions/
+https://climbtheladder.com/mvvm-android-interview-questions/
+https://climbtheladder.com/kotlin-coroutines-interview-questions/
+
+
+
+1. What is future of coroutine?
+     -It will be cotinue as coroutine provides convinient and efficient way to manage             concurrency.
+
+2.  what are best practices to follow for coroutine?
+      - Use coroutine for short lived background task
+      - Use coroutine for task that can be executed in parallel, not synchronously
+      - Use coroutine for task that need to be executed on other thread than UI thread
+
+3.  What is Unit testing?
+     - It focus on single component or small group of component.
+     - It help to ensure code written for component working as expected
+     - Android unit test case are written in java
+
+4. What is difference between Mockito and Roboelectric?
+    Mockito : library allows to create mock objects for testing.
+    Roboelectric : library allows to run on android unit test on JVM instead of device or                                  emulator.
+
+5. What  are some tools used for unit testing in android?
+     JUnit, Espresso, Roboelectric
+    All has its own strength and weakness
+    We should choose one is right for the project
+
+6. What is Espresso?
+     With espresso, we can write automation test case for ui
+     and we can verify result working as expected or not
+
+7. What is JUnit? Why it is used?
+    JUnit is a testing framework which help to create test case for component
+    which ensure functionality working as intended
+    When app is released, we can test the functionality and 
+    we can find the errors and solve it in early stage
+
+8. What is mock object in android ?
+     Mock object is a test object which simulate behaviour of real object.
+     
+9. Is it possible to create sample app using unit test?
+     Yes, Its possible, But it's not recommended as it lead to lot of duplicate code
+     Better idea is to create seperate unit test project
+
+10. Coverage 
+       Is a measure how much of your code execute by unit test
+       High coverage means it is more likely to find a bugs
+
+11. How you organize unit test case in android?
+       We can create test case for seperate classes or
+       create test case for individual methods
+
+12.  What are limitation of unit testing in android?
+        Android platform is changing, so its difficult to keep unit test up-to-date
+        It lacks true emulator, it means it executes on actual device which
+        can be more expensive and time-consuming
+
+13. test case covers all possible scenario
+       keep test short and focused
+       Run test on emulator before running on actual device to ensure 
+       they will work as expected
+
+14.  what is APK-based protection scheme are?
+        To protect android application from being reverse engineered
+         It envolve encrypting application code using obfunction 
+         and make it difficult to understand the code.
+
+       It prevent application from reverse engineered,
+       It involved obfunction which make code hard to understand
+
+15. What are testing plan before releasing application?
+      1. Make sure application doesn't crash
+      2. Make sure app doesnt have vulnarabilities
+      3. Make sure app compliant with policies
+
+16. Where we can perform static code analysis?
+       SonarQuebe
+       FindBug
+       QARK
+
+17.  How to create test suite using Robotium/Appium?
+        There is no one size fits all answer
+        But, we can create series of test case which cover functionality
+        you want to test, then use tools like robotium or appium
+        which executes those test case automatically
+
+18. Best practices to follow when developing android app
+       from scratch?
+       
+      1. Use strong encryption algorithm  to protect sensitive data
+      2. Use permission to restrict access to sensitive data
+      3. Use remote wipe feature to delete all data if device stolen
+
+19. what are standard permission
+       camera  
+       storage
+        internet
+    
+     
+
+Coroutine
+Unit testing
+Dagger Hilt
+Kotlin
+
+
+
+11 days - Focus Focus and Focus
+----------------------------------------
+1100 questions 
+
+
+
+
+
+
+
+
+
+Sleep at 1 to 7 : Total 6 hours
+Sleep at 3 to 5 : Total 2 hours   8 hrs sleep
+
+9 to 12 Kitchen : 
+1 to 3 Kitchen + danie : 
+5 to 6.30 Kitchen + danie : 
+8 to 9 Kitchen :      7.30 hrs home, Bath room + Wash room + Brush 
+
+9 to 1 : spent 1 hr Rajeev, 1 hr Aunty
+
+2 hours : me
+1 hr        :  me
+1.5 hr     : me
+2  hr        : me
+---------------
+6.30 hrs for me
+
+-----------------------------------------------------------------------------------------
+In absence 
+
+Sleep at 1 to 7 : Total 6 hours
+Sleep at 3 to 5 : Total 2 hours   8 hrs sleep
+
+9 to 12 Kitchen : 
+1 to 3 Kitchen + danie : 
+5 to 6.30 Kitchen + danie : 
+8 to 9 Kitchen :      7.30 hrs home, Bath room + Wash room + Brush 
+
+
+2 hours : me
+1 hr        :  me
+1.5 hr     : me
+4  hr        : me
+---------------
+8.30 hrs for me
+
+
+
+
+
+
+
+
+
+       
+
+
+
+https://www.interviewbit.com/kotlin-interview-questions/
+
+Is he going to eat me up?
+Anxiety seeps deep within, causinh my heart to spin
+What is that mysterious sound?
+Like a sweet aroma that surrounds
+It resembles the jingle of bangles of my soft wrists.
+In the mirror's reflection, a new identity I see
+
+
+HILT
+-----
+It's a dependency injection library for android, We have dagger2 and also with us
+Hilt provide standard way of implementing DI, Its a wrapper of Dagger2
+
+In dagger2 we have 
+
+Scopes : Singleton Scope, Activity Scope, Fragment Scope
+Components : Application Component, Activity Component
+Component Dependencies : Sub Components, Depedency Attribute
+Runtime binding for Application Context, Activity Context
+All this thing we have to use at proper place
+
+In Hilt, We have this thing ready made, we just need to use it
+
+Application - SingletonComponent
+Activity - ActivityComponent
+ViewModel - ViewModelComponent
+Fragment - FragmentComponent
+View - ViewComponent
+Service - ServiceComponent
+View annotated with WithFragmentBindings - ViewWithFragmentBindings
+
+In subcomponent, dependencies are inherited from parent component
+
+We have default bindings as well
+
+We have application context reference in SingletonComponent
+
+SingletonComponent : Application
+ActivityRetainedComponent : Application
+ViewModelComponent  : SavedStateHandle
+ActivityComponent : Application, Activity
+FragmentCompoenent : Application, Activity, Fragment
+ViewComponent : Application, Activity, View
+ViewWithFragmentComponent : Application, Activity, Fragment, View
+ServiceComponent : Application, Service
+
+
+Scopes defines the boundries
+
+Constructor Injection
+---------------------------
+We need to write @Inject constructor after class name
+We can create object whereever we want in application , and need to define @Inject above the variable
+
+Application Class :  HiltAndroidApp
+Activity                    :  AndroidEntryPoint 
+Fragment               :  AndroidEntryPoint 
+
+Note ** : If you use constructor injection inside fragment, You need to define AndroidEntryPoint in frament, As well as You need to define AndroidEntryPoint 
+inside Activity containing fragment
+
+
+Module is a way through which we can create objects
+
+If object reference used in activity, install it in ActivityComponent
+If object reference used in application level, install it in SingletonComponent
+
+If you want to bind implementation with interface, we use bind 
+We also can use Provides
+--------------------------------
+Named Qualifier :   When we have same return type in module, we need to use named annotation to biphergate it
+Custom Qualifier :   While we use name parameter, we use string, so there is chance for 
+spelling error, for that purpose we use qualifier
+
+Binds are abstract methods
+
+Entry Points are used to inject objects
+
+We have predefined qualifiers  that is ApplicationContext and ActivityContext
+
+What is data class?
+--------------------------
+Data class holds data
+It has built in functions such as equals, hashcode, copy and toString
+
+It has atleast one parameter required for primary constructor, with var or val
+Abstract, Open, Sealed, Inner data class is not possible, Only interface implemented by 
+data class
+
+What is companion object?
+---------------------------------
+
+We can access member of class by Class name .
+This also referes to Object Extension
+We need to use companion keyword before classs
+
+1. Before class name, we  need to use Companion Object keyword
+2. If we don't define class name, by default method name is Companion
+       i.e companion object { } , can be accessed by CompanionClass.Companion
+
+
+When expression
+---------------------
+It is equivalant to switch, It doesnt require to write break 
+
+
+What are advantages of kotlin over java?
+--------------------------------------------------
+It has some good feaures.
+
+Data class,extension function, null safety, getter setter pattern, And less prone to errors
+
+Support for one common codebase: You may extract one common codebase that will target all of them at the same time using the Kotlin Multi-Platform framework.
+
+Benefit of Immutable list
+---------------------------------
+In multi-threaded environment, it doesn't induce race condition
+Disadvantage : If you want to change its value, code becomes more difficult.
+                                We  can do it by using copy function, but the operation is more
+                                 expensive.
+
+
+What is lateinit ? 
+-------------------
+
+
+
+Scope Functions 
+---------------------
+
+Want to return Object : Use Apply/Also
+                  Want to use this : Use Apply
+                   Want to use it    :  Use Also 
+
+Want to return Result :
+                 Want to use this :  Run/With     -   Check Null : Run
+                                                                                -   No check null : With
+                 Want to use it      :  Let
+
+
+Lifecycle of Android Service
+----------------------------------
+Lifycle method of service is used to 
+initialize and cleaning resources.
+
+onCreate() - Called when service is first created ( on initilization ),
+It used to initialize resources , such as initialize threads or acquire resources
+
+onDestroy() - Called when service is shutdown,
+Used to free up the resources
+
+onStartCommand() - Called when service start, it can call multiple times
+Used to get information from Internt
+
+
+We can bind  multiple client to service using bindService
+---------------------------------------------------------------------
+
+Sticky Service
+-----------------
+If the component which start the service, destroys still service
+keep running in background called sticky service
+Music Player : Even if app close, it continue to play music
+
+When to use Intent Service/Regular Service
+-----------------------------------------------------
+When you want to perform task in background and 
+       Want to return result to caller - Use Regular Service
+When you want to perform task in background and
+      Don't want to return result to caller - Use Intent Service
+
+Difference between bound and started service
+---------------------------------------------------------
+
+
+Where does service run?
+------------------------------
+Service run on same process of activity or a seperate process
+
+If It run on same process of activity, then when activity destroy,
+that service also destory
+
+If it run on seperate process, then service continue,
+even if activity destroy
+
+How do service and other components communicate with each other?
+--------------------------------------------
+1. We can use messanger system
+2. We can use event bus also
+
+Can you explain why we need to stop a service before uninstalling applications in Android?
+------------------------------------------
+To prevent data loss
+
+In which situation would you consider using remote service?
+--------------------------------------------------------------------------
+1. You want to perform task that is not directly related to user interface
+2. Task that takes long time
+
+e.g  download large file
+
+What is AIDL
+---------------
+It stands for Android Interface Defination Language
+
+It allows to create service that can be used by other android application
+
+Advantage of Local Service over Remote Service
+------------------------------------------------------------
+Local service m0re reliable and secure
+It has better performance as they are not subject to network latency
+
+ What are some alternatives to using Services in Android apps?
+----------------------------------------------------------------------------
+We can use Intent Service
+We can use Job Scheduler
+
+
+What is the significance of the @Override annotation when working with services in Android?
+----------------------
+Overridden methods called by the system, it help to identify system which method 
+need to call when service starts or stops
+
+Exmaple of Intent that commonly used.
+-------------------------------------------------
+ACTION_SEND
+ACTION_MAIN
+ACTION_VIEW
+ACTION_INSERT
+ACTION_DELETE
+ACTION_EDIT
+ACTION_GET_CONTENT
+
+Difference between bound and started service
+---------------------------------------------------------
+
+Bound service bound with the activity, when activity destroy, it got destroy
+Started service starts with activity, But it continue running even if activity destroy
+
+
+
+------------------------------------------------------
+If you want to return object, use Apply/Also
+If want to use this, use apply
+If  you want to use it, use also
+
+--------------------------------------------------------
+If you want to return Result, use run/with/ let
+
+If you want to use  this: use Run/With 
+     If you want to check null, use run
+     If you dont want to check null, use with
+If you want to use it: use Let
+
+
+
+                                
+
+
+
+

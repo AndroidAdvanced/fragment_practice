@@ -1,0 +1,5 @@
+data class
+companion object
+when expression
+
+1 / 1000
