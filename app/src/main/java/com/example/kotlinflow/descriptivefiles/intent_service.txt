@@ -1,0 +1,14 @@
+Intent Service :
+----------------
+
+1. Intent service stop itself when no more request to handle, free up system resource
+2.
+
+
+
+
+
+
+
+
+

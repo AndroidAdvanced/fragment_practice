@@ -1,0 +1,9 @@
+String       String Buffer     String Builder
+
+
+String is immutable - If You want to change its value, it will modify but code behind new string object creaed for the newer value and old object wait for Garbale collection
+
+String buffer is thread safe, as it has synchronized method. One thread can access at a time
+
+String builder is not thread safe it doesn't have synchronized method
+

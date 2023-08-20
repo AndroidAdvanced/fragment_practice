@@ -11,11 +11,17 @@ class MainActivity : AppCompatActivity() {
     private var ft = fm.beginTransaction()
     private lateinit var binding: MainLayoutBinding
 
+    var str : String = "Abc"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = MainLayoutBinding.inflate(layoutInflater)
         val view = binding.root
+
+        str = str + "AbAB"
+
+        println("Lines::" + str)
 
      //   setContentView(view)
 
